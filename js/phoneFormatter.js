@@ -375,7 +375,6 @@ function setupPhoneFormatter({
 }
 
 // ... (tepadagi p, g va setupPhoneFormatter kodi o'zgarishsiz qoladi)
-
 document.addEventListener("DOMContentLoaded", () => {
   // --- TELEFON FORMATTER QISMI ---
   window.phoneFormatter = setupPhoneFormatter({
@@ -392,18 +391,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // --- MODALNI BOSHQARISH QISMI ---
-  const openBtn = document.getElementById('open');
+  // ID o'rniga barcha 'btn' klasli tugmalarni tanlaymiz
+  const openButtons = document.querySelectorAll('.btn'); 
   const modal = document.getElementById('registrationModal');
   const closeBtn = document.getElementById('closeModalBtn');
   const overlay = document.querySelector('.homeModalOverlay');
 
-  if (openBtn && modal) {
-    openBtn.addEventListener('click', (e) => {
+  // Har bir tugma bosilganda modal ochilishi uchun tsikl (loop)
+  openButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
       e.preventDefault();
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
     });
-  }
+  });
 
   const closeModal = () => {
     if (modal) {
@@ -424,14 +427,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (form) {
     form.addEventListener('submit', (e) => {
-      e.preventDefault(); // Sahifa yangilanishini to'xtatamiz
+      e.preventDefault();
 
       const nameVal = nameInput.value.trim();
       const phoneVal = document.getElementById('phone').value;
       
       let isValid = true;
 
-      // 1. Ismni tekshirish (kamida 2 ta belgi)
       if (nameVal.length < 2) {
         nameError.style.display = 'block';
         isValid = false;
@@ -439,7 +441,6 @@ document.addEventListener("DOMContentLoaded", () => {
         nameError.style.display = 'none';
       }
 
-      // 2. Telefonni sening formatter'ing orqali tekshirish
       if (!window.phoneFormatter.validate(phoneVal)) {
         phoneError.style.display = 'block';
         isValid = false;
@@ -447,10 +448,12 @@ document.addEventListener("DOMContentLoaded", () => {
         phoneError.style.display = 'none';
       }
 
-      // 3. Agar hammasi OK bo'lsa, Thank You sahifasiga o'tamiz
       if (isValid) {
-        submitBtn.disabled = true;
-        // Ma'lumotlarni yuborish uchun kichik pauza (0.5 sek) va o'tish
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerText = "YUKLANMOQDA...";
+        }
+        
         setTimeout(() => {
           window.location.href = 'thankyou.html';
         }, 500);
