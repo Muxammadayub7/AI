@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="./css/main.css" />
+  </noscript>
+
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero__container container">
+      <p class="hero__text">Shakhlo Alikhanova</p>
+      <div class="hero__row">
+        <h2 class="row__title">AI BILAN 5 XIL YO'LDA <br> <span>$1,000 TOPISH</span> YO'LLARI</h2>
+        <p class="row__text">Shvetsiyadan Sun’iy Intellekt <br> mutaxassisi darsligi <img
+            src="./images/hero/text__arrow.svg" alt="arrow" width="16px" height="24" loading="lazy" decoding="async"
+            class="text__arrow"></p>
+        <img src="./images/hero/logo.avif" alt="img" width="349" height="210" fetchpriority="high" decoding="async"
+          class="logo">
+        <div class="row__buttons">
+          <button class="btn" id="open">Video darslikni ko’rish <img src="./images/hero/arrow.svg" alt="arrow"
+              width="10" height="10" loading="lazy" decoding="async" class="arrow"></button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="hero__center">
+    <h2 class="center__title">O’quvchilarimning <br> hozirgi daromadlari</h2>
+    <div class="center__inner">
+      <div class="wrapper">
+        <img src="./images/hero/img__1.avif" width="125" height="156" loading="lazy" decoding="async" alt="card__img"
+          class="card__img__1">
+        <img src="./images/hero/img__2.avif" width="125" height="156" loading="lazy" decoding="async" alt="card__img"
+          class="card__img__2">
+        <img src="./images/hero/img__3.avif" width="125" height="156" loading="lazy" decoding="async" alt="card__img"
+          class="card__img__3">
+        <img src="./images/hero/img__1.avif" width="125" height="156" loading="lazy" decoding="async" alt="card__img"
+          class="card__img__1">
+        <img src="./images/hero/img__3.avif" width="125" height="156" loading="lazy" decoding="async" alt="card__img"
+          class="card__img__3">
+        <img src="./images/hero/img__2.avif" width="125" height="156" loading="lazy" decoding="async" alt="card__img"
+          class="card__img__2">
+      </div>
+      <div class="wrapper">
+        <img src="./images/hero/img__1.avif" width="125" height="156" loading="lazy" decoding="async" alt="card__img"
+          class="card__img__1">
+        <img src="./images/hero/img__2.avif" width="125" height="156" loading="lazy" decoding="async" alt="card__img"
+          class="card__img__2">
+        <img src="./images/hero/img__3.avif" width="125" height="156" loading="lazy" decoding="async" alt="card__img"
+          class="card__img__3">
+        <img src="./images/hero/img__1.avif" width="125" height="156" loading="lazy" decoding="async" alt="card__img"
+          class="card__img__1">
+        <img src="./images/hero/img__2.avif" width="125" height="156" loading="lazy" decoding="async" alt="card__img"
+          class="card__img__2">
+        <img src="./images/hero/img__3.avif" width="125" height="156" loading="lazy" decoding="async" alt="card__img"
+          class="card__img__3">
+      </div>
+    </div>
+    <div class="row__buttons">
+      <button class="btn" id="open">Video darslikni ko’rish <img src="./images/hero/arrow.svg" alt="arrow" width="10"
+          height="10" loading="lazy" decoding="async" class="arrow"></button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <h2 class="footer__title">Shahlo Alikhanova</h2>
+      <img src="./images/footer/footer__logo.avif" width="390" height="305" loading="lazy" decoding="async" alt="logo"
+        class="footer__logo">
+      <ul class="footer__list">
+        <li>Shvetsariyadan expert</li>
+        <li>200+ O’quvchilar ustozi</li>
+        <li>AI videolari orqali daromad</li>
+        <li>2 yillik tajribaga ega</li>
+      </ul>
+      <div class="row__buttons">
+        <button class="btn" id="open">Video darslikni ko’rish <img src="./images/hero/arrow.svg" alt="arrow" width="10"
+            height="10" loading="lazy" decoding="async" class="arrow"></button>
+      </div>
+    </div>
+  </footer>
+
+  <div id="registrationModal" class="homeModal" style="display: none">
+    <div class="homeModalOverlay"></div>
+    <div class="homeFormContainer">
+      <button class="closeButton" id="closeModalBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M1 11L11 1M1 1.00001L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+      </button>
+      <div class="homeFormTop">
+        <h1 class="homeFormTopTitle">
+          Ro'yxatdan o'tish uchun <br> ma'lumotlaringizni kiriting!
+        </h1>
+      </div>
+      <form id="registrationForm" name="contact-form">
+        <div class="HomeFormRow">
+          <label class="HomeFormRowLabel" for="name">Ismingiz:</label>
+          <input class="HomeFormRowInput" type="text" id="name" name="name" placeholder="Ismingizni kiriting"
+            autocomplete="name" />
+          <p class="homeFormErrorText" id="nameError" style="display: none">❌ Ismingizni kiriting!</p>
+        </div>
+
+        <div class="HomeFormRow">
+          <label class="HomeFormRowLabel" for="phone">Telefon raqamingiz:</label>
+          <div class="phone-input-container">
+            <button type="button" class="selected-country" id="selectedCountry">
+              <div id="selectedCountryFlag" style="display: flex; align-items: center;"></div>
+              <span class="selected-code" id="selectedCountryCodeText">+998</span>
+            </button>
+            <div class="country-dropdown" id="countryDropdown" style="display:none"></div>
+            <div class="phone-field" style="flex: 1;">
+              <input class="HomeFormRowInput phone-input" type="tel" id="phone" name="phone" inputmode="numeric"
+                placeholder="88 888 88 88" autocomplete="tel"
+                style="border: none; background-color: transparent; padding-left: 5px; width: 100%;" />
+            </div>
+          </div>
+          <p class="homeFormErrorText" id="phoneError" style="display:none">❌ Telefon raqam mos emas!</p>
+        </div>
+
+        <button type="submit" class="HomeFormBtn" id="submitBtn">DAVOM ETISH</button>
+      </form>
+    </div>
+  </div>
+
+  <script defer src="./js/phoneFormatter.js"></script>
+</body>
+
+</html>
